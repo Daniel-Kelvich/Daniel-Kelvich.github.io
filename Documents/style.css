@@ -1,0 +1,36 @@
+body {
+  background-color: lightgoldenrodyellow;
+}
+
+table.lr_list, th, td {
+  border: 1px solid black;
+}
+
+h1 {
+    text-align: center;
+}
+
+.content {
+    display: none;
+}
+
+table tr.menuBtn:hover{
+    background: yellow;
+}
+
+
+.top {
+  position:absolute;
+  left:0; right:0;
+  height: 92px;
+}
+.left {
+  position:absolute;
+  left:0; top:160px; bottom: 0;
+  width: 250px;
+}
+.main {
+  position: absolute;
+  left:250px; top:160px; right:0; bottom:0;
+  padding-left: 20px;
+}

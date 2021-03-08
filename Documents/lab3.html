@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Лабораторна робота №3</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+<h1>Лабораторна робота №3</h1>
+
+<table style="width:100%" class="lr_list">
+    <tr>
+        <th><a href="lab1.html">ЛР № 1</a></th>
+        <th><a href="lab2.html">ЛР № 2</a></th>
+        <th><a href="lab3.html">ЛР № 3</a></th>
+        <th><a href="lab4.html">ЛР № 4</a></th>
+        <th><a href="#">ЛР № 5</a></th>
+        <th><a href="#">ЛР № 6</a></th>
+        <th><a href="#">ЛР № 7</a></th>
+        <th><a href="#">ЛР № 8</a></th>
+        <th><a href="#">ЛР № 9</a></th>
+    </tr>
+</table>
+
+<div class="left">
+    <table class="menu" style="width:100%">
+        <tr class="menuBtn" id="btn1">
+            <th>Постановка задачі ЛР3</th>
+        </tr>
+        <tr class="menuBtn" id="btn2">
+            <th>Середовище розробки</th>
+        </tr>
+        <tr class="menuBtn" id="btn3">
+            <th>Скріншот головної сторінки власного сайту</th>
+        </tr>
+        <tr class="menuBtn" id="btn4">
+            <th>HTML –код власного сайту</th>
+        </tr>
+        <tr class="menuBtn" id="btn5">
+            <th>СSS –код власного сайту</th>
+        </tr>
+        <tr class="menuBtn" id="btn6">
+            <th>ПУНКТ 7. Розмітка сторінки за допомогою блочних елементів</th>
+        </tr>
+        <tr class="menuBtn" id="btn7">
+            <th>FLEXBOX. Скріншот сторінки. HTML та CSS-коди</th>
+        </tr>
+        <tr class="menuBtn" id="btn8">
+            <th>ВИСНОВКИ</th>
+        </tr>
+    </table>
+</div>
+
+<div class="main">
+    <div class="content" style="display: block" id="myDIV1">
+        Придбати практичні навички роботи верстки сторінок засобами CSS, верстки
+        на основі плаваючих елементів, з’ясувати переваги та недоліки типів
+        макетів веб-сторінок
+    </div>
+    <div class="content" id="myDIV2">
+        VSCode
+    </div>
+    <div class="content" id="myDIV3">
+        <img src="images_lab3/crowdfound.png" height="600" alt=""/>
+    </div>
+    <div class="content" id="myDIV4">
+        <img src="images_lab3/html-code.png" height="600" alt=""/>
+    </div>
+    <div class="content" id="myDIV5">
+        <img src="images_lab3/css-code.png" height="600" alt=""/>
+    </div>
+    <div class="content" id="myDIV6">
+        <img src="images_lab3/crowdfound.png" height="600" alt=""/>
+    </div>
+    <div class="content" id="myDIV7">
+        <img src="images_lab3/flex.png" height="600" alt=""/>
+    </div>
+    <div class="content" id="myDIV8">
+        В даній лабораторній роботі ми навчилися застосовувати flex технології
+        та покращили зовнішній вигляд нашого сайту.
+    </div>
+</div>
+
+<script>
+    var tr = document
+        .getElementsByClassName("menu")[0]
+        .getElementsByTagName("th");
+
+    for (var i = 0; i < tr.length; i++) {
+        tr[i].addEventListener("click", myScript);
+    }
+
+    function myScript(event) {
+        document
+            .querySelectorAll(".content")
+            .forEach(e => (e.style.display = "none"));
+        let btnId = event.path[1].id;
+        console.log(`myDIV${btnId.charAt(3)}`);
+        var x = document.getElementById(`myDIV${btnId.charAt(3)}`);
+        x.style.display = "block";
+    }
+</script>
+</body>
+</html>
