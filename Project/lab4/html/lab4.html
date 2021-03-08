@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Lab4</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <style>
+  </style>
+
+  <body>
+      <div class='container'>
+        <p id="link"></p>
+      <button id="some-button">Click me</button>
+      <button onclick="myFunction()">Try it</button>
+
+      </div>
+      <script>
+        var hotText = 'MDN';
+        var URL = 'https://developer.mozilla.org/';
+        document.getElementById("link").innerHTML =  hotText.link(URL);
+      </script>
+      <script>
+        var someElement = document.getElementById('some-button');
+        function clickButton() {
+          alert('Ви тільки що натиснули кнопку!');
+        }
+        someElement.onclick = clickButton;
+      </script>
+      <script>
+        let bubbleSort = (inputArr) => {
+            let len = inputArr.length;
+            for (let i = 0; i < len; i++) {
+                for (let j = 0; j < len; j++) {
+                    if (inputArr[j] > inputArr[j + 1]) {
+                        let tmp = inputArr[j];
+                        inputArr[j] = inputArr[j + 1];
+                        inputArr[j + 1] = tmp;
+                    }
+                }
+            }
+            return inputArr;
+        };
+
+        myFunction = () => {
+        let n = prompt('N',10);
+        let arr = [];
+        let pairedSum = 0;
+        let negativeNumbersMultiply = 1;
+        let maxElem = {index:-1, value:-10};
+        let minNegative = {index: 0, value: 0};
+
+        for(let i = 0;i<n; i++){
+          arr[i] = Math.floor((Math.random() - 0.3) * 10)
+          if (i%2 === 0) pairedSum += arr[i];
+          if (arr[i] < 0) negativeNumbersMultiply *= arr[i];
+          if (arr[i] > maxElem.value) maxElem = {index:i,value:arr[i]}
+          if (arr[i] < minNegative.value && arr[i] < 0) minNegative = {index:i,value:arr[i]}
+        }
+        console.table([{name:"pairedSum",value:pairedSum},{name:"negativeNumbersMultiply",value:negativeNumbersMultiply},{name:"maxElem",value:`{value: ${maxElem.value},index: ${maxElem.index}}`},{name:"minNegative",value:`{value: ${minNegative.value},index: ${minNegative.index}}`}]);
+        console.log('2 arrays',arr,bubbleSort(arr));
+      }
+      </script>
+  </body>
+</body>
+</html>
