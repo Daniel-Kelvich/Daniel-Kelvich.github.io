@@ -1,0 +1,80 @@
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerOrange {
+  background: orange;
+}
+
+.headerContainerOrange {
+  background: orange;
+  padding: 10px;
+}
+
+.headerMainText {
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.headerContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bodyHeader {
+  margin-top: 20px;
+}
+
+.bodyHeaderText {
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.bodyMain {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.bodyMainImage {
+  border: 1px solid black;
+}
+
+.bodyFooterContainer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bodyFooterContainerImage {
+  width: fit-content;
+  height: fit-content;
+  margin-top: 20px;
+}
+
+.footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footerRight {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footerRightImage {
+  width: 46px;
+  height: 46px;
+  margin-left: 15px;
+}
+
+.footerRightImage:hover {
+  cursor: pointer;
+}
