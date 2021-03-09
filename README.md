@@ -1,2 +1,5 @@
-V1 - V.S.
-V2 - D.K.
+V1 - Vladyslav Symonenko
+
+V2 - Danylo Kelvich
+
+
