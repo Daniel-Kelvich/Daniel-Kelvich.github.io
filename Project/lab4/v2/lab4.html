@@ -1,136 +1,147 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Lab4</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <style>
-  </style>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<style>
+</style>
 
-  <body>
-      <div class='container'>
-        <p id="link"></p>
-      <button id="some-button">Click me</button>
-      <!-- <button onclick="myFunction()">Try it</button> -->
-      <button onclick="myFunction2()">Try it</button>
-      </div>
-      <script>
-        var hotText = 'MDN';
-        var URL = 'https://developer.mozilla.org/';
-        document.getElementById("link").innerHTML =  hotText.link(URL);
-      </script>
-      <script>
-        var someElement = document.getElementById('some-button');
-        function clickButton() {
-          alert('Ви тільки що натиснули кнопку!');
-        }
-        someElement.onclick = clickButton;
-      </script>
-      <!-- <script>
-        let bubbleSort = (inputArr) => {
-            let len = inputArr.length;
-            for (let i = 0; i < len; i++) {
-                for (let j = 0; j < len; j++) {
-                    if (inputArr[j] > inputArr[j + 1]) {
-                        let tmp = inputArr[j];
-                        inputArr[j] = inputArr[j + 1];
-                        inputArr[j + 1] = tmp;
-                    }
-                }
-            }
-            return inputArr;
-        };
+<body>
+<div class='container'>
+    <p id="link"></p>
+    <button id="some-button">Click me</button>
+    <!-- <button onclick="myFunction()">Try it</button> -->
+    <button onclick="myFunction2()">Try it</button>
+</div>
 
-        myFunction = () => {
-        let n = prompt('N',10);
-        let arr = [];
-        let pairedSum = 0;
-        let negativeNumbersMultiply = 1;
-        let maxElem = {index:-1, value:-10};
-        let minNegative = {index: 0, value: 0};
+<form>
+    <input type="date" name="calendar" id="calendar_id">
+    <input type="reset" value="Reset">
+</form>
 
-        for(let i = 0;i<n; i++){
-          arr[i] = Math.floor((Math.random() - 0.3) * 10)
-          if (i%2 === 0) pairedSum += arr[i];
-          if (arr[i] < 0) negativeNumbersMultiply *= arr[i];
-          if (arr[i] > maxElem.value) maxElem = {index:i,value:arr[i]}
-          if (arr[i] < minNegative.value && arr[i] < 0) minNegative = {index:i,value:arr[i]}
-        }
-        console.table([{name:"pairedSum",value:pairedSum},{name:"negativeNumbersMultiply",value:negativeNumbersMultiply},{name:"maxElem",value:`{value: ${maxElem.value},index: ${maxElem.index}}`},{name:"minNegative",value:`{value: ${minNegative.value},index: ${minNegative.index}}`}]);
-        console.log('2 arrays',arr,bubbleSort(arr));
-      }
-      </script> -->
-           <script>
+<script>
+    var hotText = 'MDN';
+    var URL = 'https://developer.mozilla.org/';
+    document.getElementById("link").innerHTML = hotText.link(URL);
+</script>
+<script>
+    var someElement = document.getElementById('some-button');
 
-function swap(items, firstIndex, secondIndex){
-    const temp = items[firstIndex];
-    items[firstIndex] = items[secondIndex];
-    items[secondIndex] = temp;
-}
-
-function partition(items, left, right) {
-    var pivot   = items[Math.floor((right + left) / 2)],
-        i       = left,
-        j       = right;
-    while (i <= j) {
-        while (items[i] < pivot) {
-            i++;
-        }
-        while (items[j] > pivot) {
-            j--;
-        }
-        if (i <= j) {
-            swap(items, i, j);
-            i++;
-            j--;
-        }
+    function clickButton() {
+        alert('Ви тільки що натиснули кнопку!');
     }
-    return i;
-}
 
-
-function quickSort(items, left, right) {
-    var index;
-    if (items.length > 1) {
-        left = typeof left != "number" ? 0 : left;
-        right = typeof right != "number" ? items.length - 1 : right;
-        index = partition(items, left, right);
-        if (left < index - 1) {
-            quickSort(items, left, index - 1);
-        }
-        if (index < right) {
-            quickSort(items, index, right);
-        }
-    }
-    return items;
-}
-
-      
-              myFunction2 = () => {
-              let n2 = prompt('N',10);
-              let arr2 = [];
-              let maxElem = {index:-1, value:-10};
-              let minElem = {index:-1, value:10};
-              let sum;
-
-              for(let i = 0;i<n2; i++){
-                arr2[i] = Math.floor((Math.random() - 0.3) * 10)
-                if (arr2[i] > maxElem.value) maxElem = {index:i,value:arr2[i]}
-                if (arr2[i] < minElem.value) minElem = {index:i,value:arr2[i]}
+    someElement.onclick = clickButton;
+</script>
+<!-- <script>
+  let bubbleSort = (inputArr) => {
+      let len = inputArr.length;
+      for (let i = 0; i < len; i++) {
+          for (let j = 0; j < len; j++) {
+              if (inputArr[j] > inputArr[j + 1]) {
+                  let tmp = inputArr[j];
+                  inputArr[j] = inputArr[j + 1];
+                  inputArr[j + 1] = tmp;
               }
+          }
+      }
+      return inputArr;
+  };
 
-              console.log('array 1',arr2);
-              console.log('array 2',quickSort(arr2));
+  myFunction = () => {
+  let n = prompt('N',10);
+  let arr = [];
+  let pairedSum = 0;
+  let negativeNumbersMultiply = 1;
+  let maxElem = {index:-1, value:-10};
+  let minNegative = {index: 0, value: 0};
 
-              console.table([{name:"maxElem",value:`{value: ${maxElem.value},index: ${maxElem.index}}`},{name:"minElem",value:`{value: ${minElem.value},index: ${minElem.index}}`}]);
-              sum = maxElem.value + minElem.value;
-              console.log('sum',sum);
+  for(let i = 0;i<n; i++){
+    arr[i] = Math.floor((Math.random() - 0.3) * 10)
+    if (i%2 === 0) pairedSum += arr[i];
+    if (arr[i] < 0) negativeNumbersMultiply *= arr[i];
+    if (arr[i] > maxElem.value) maxElem = {index:i,value:arr[i]}
+    if (arr[i] < minNegative.value && arr[i] < 0) minNegative = {index:i,value:arr[i]}
+  }
+  console.table([{name:"pairedSum",value:pairedSum},{name:"negativeNumbersMultiply",value:negativeNumbersMultiply},{name:"maxElem",value:`{value: ${maxElem.value},index: ${maxElem.index}}`},{name:"minNegative",value:`{value: ${minNegative.value},index: ${minNegative.index}}`}]);
+  console.log('2 arrays',arr,bubbleSort(arr));
+}
+</script> -->
+<script>
 
-           }
-            </script>
-  </body>
+    function swap(items, firstIndex, secondIndex) {
+        const temp = items[firstIndex];
+        items[firstIndex] = items[secondIndex];
+        items[secondIndex] = temp;
+    }
+
+    function partition(items, left, right) {
+        var pivot = items[Math.floor((right + left) / 2)],
+            i = left,
+            j = right;
+        while (i <= j) {
+            while (items[i] < pivot) {
+                i++;
+            }
+            while (items[j] > pivot) {
+                j--;
+            }
+            if (i <= j) {
+                swap(items, i, j);
+                i++;
+                j--;
+            }
+        }
+        return i;
+    }
+
+
+    function quickSort(items, left, right) {
+        var index;
+        if (items.length > 1) {
+            left = typeof left != "number" ? 0 : left;
+            right = typeof right != "number" ? items.length - 1 : right;
+            index = partition(items, left, right);
+            if (left < index - 1) {
+                quickSort(items, left, index - 1);
+            }
+            if (index < right) {
+                quickSort(items, index, right);
+            }
+        }
+        return items;
+    }
+
+
+    myFunction2 = () => {
+        let n2 = prompt('N', 10);
+        let arr2 = [];
+        let maxElem = {index: -1, value: -10};
+        let minElem = {index: -1, value: 10};
+        let sum;
+
+        for (let i = 0; i < n2; i++) {
+            arr2[i] = Math.floor((Math.random() - 0.3) * 10)
+            if (arr2[i] > maxElem.value) maxElem = {index: i, value: arr2[i]}
+            if (arr2[i] < minElem.value) minElem = {index: i, value: arr2[i]}
+        }
+
+        console.log('array 1', arr2);
+        console.log('array 2', quickSort(arr2));
+
+        console.table([{name: "maxElem", value: `{value: ${maxElem.value},index: ${maxElem.index}}`}, {
+            name: "minElem",
+            value: `{value: ${minElem.value},index: ${minElem.index}}`
+        }]);
+        sum = maxElem.value + minElem.value;
+        console.log('sum', sum);
+
+    }
+</script>
+</body>
 </body>
 </html>
