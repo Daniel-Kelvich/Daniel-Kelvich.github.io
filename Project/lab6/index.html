@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>CrowdFund</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<style>
+    li a:hover {
+        background-color: #111;
+    }
+</style>
+
+<body>
+<nav class="navbar">
+    <ul class="navbar-ul">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./html/news.html">News</a></li>
+        <li><a href="./html/contacts.html">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+</nav>
+<div id="mainImage">
+    <img
+            height="400"
+            src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            alt=""
+    />
+</div>
+
+<div>
+    <h2>Popular Projects</h2>
+    <div style="width:100%">
+        <div class="pop-proj">
+            <div class="pop-proj-content">Design Cloth</div>
+        </div>
+        <div class="pop-proj">
+            <div class="pop-proj-content">Playstation</div>
+        </div>
+        <div class="pop-proj">
+            <div class="pop-proj-content">Pebble watch</div>
+        </div>
+    </div>
+</div>
+
+<div class="projectsDiv">
+    <p>Date: <input type="text" id="datepicker"></p>
+    <div class="ui-widget">
+        <label for="tags">Tags: </label>
+        <input id="tags">
+    </div>
+
+    <h1>CrowdFund</h1>
+    <div class="projectCard">
+        <a class="projectTitle" href="projects/p1.html">
+            <h2>Project Name1</h2>
+        </a>
+        <span>Project 1 description ....</span>
+        <div id="progressbar1"></div>
+        <p>Author Kelvich Danylo</p>
+    </div>
+    <div class="projectCard">
+        <a class="projectTitle" href="projects/p2.html">
+            <h2>Project Name2</h2>
+        </a>
+        <span>Project 2 description ....</span>
+        <div id="progressbar2"></div>
+        <p>Author Vladislav Symonenko</p>
+    </div>
+</div>
+</body>
+<script>
+    $(function () {
+        $("#progressbar1").progressbar({
+            value: 37
+        });
+    });
+
+    $(function () {
+        $("#progressbar2").progressbar({
+            value: 16
+        });
+    });
+
+    $(function () {
+        $("#datepicker").datepicker();
+    });
+
+    $(function () {
+        var availableTags = [
+            "tech",
+            "healthcare",
+            "sport",
+            "beauty"
+        ];
+        $("#tags").autocomplete({
+            source: availableTags
+        });
+    });
+
+</script>
+</html>
+

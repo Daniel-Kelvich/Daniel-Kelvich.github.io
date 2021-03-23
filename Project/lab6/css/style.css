@@ -1,0 +1,63 @@
+@import "navbar.css";
+
+h2 {
+  color: red;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+img {
+  border-radius: 10px;
+}
+
+#mainImage {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.projectTitle {
+  text-decoration: none;
+}
+
+.projectCard {
+  background-color: lightblue;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.projectCard > p {
+  font-style: italic;
+}
+
+* {
+  color: black;
+}
+
+a + span {
+  color: rgb(129, 129, 129);
+}
+
+a[href^="#"] {
+  /* color: currentColor; */
+  cursor: not-allowed;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.pop-proj {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+  /* margin: 5px; */
+}
+
+.pop-proj-content {
+  background-color: lightcoral;
+  padding: 5px;
+}
